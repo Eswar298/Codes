@@ -25,6 +25,9 @@ for(it=m.begin();it!=m.end();it++)
 
 -->to convert number to string
 str = to_string(num)
+      
+-->cout<<fixed<<setprecision(6)<<ele;
+-->getline(cin,s)
 
 -->to convert string to num
 num = stoi(str)
