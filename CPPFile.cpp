@@ -51,3 +51,8 @@ else
 {
 str+=str[i];
 }
+
+-->Boost
+#include<boost/algorithm/string.hpp>
+vector<string> result; 
+boost::split(result, input, boost::is_any_of(" ")); 
