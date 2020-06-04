@@ -12,6 +12,17 @@ Every removal operation costs y units.
 Every modification operation costs z units
 
 Your task is, given A and B, find the minimum cost to convert A to B.
+    
+Sample Input 0
+
+6
+1 2 3 4 5 6
+8
+1 5 7 2 8 4 5 6
+5 5 10000
+Sample Output 0
+
+20
 
 #include <cmath>
 #include <cstdio>
