@@ -82,3 +82,54 @@ print(i2,i3,i4,i5)
 print(k[1],k[2],k[3],k[4])
 
 
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int n;
+int check(int a[][1005],int x,int y){
+    if(x<0||y<0||x>=n||y>=n)return -1;
+    return a[x][y];
+} 
+
+void calUtil(int a[][1005],int x,int y,int inf[],int hi[]){
+    if(a[x][y]>1){
+        inf[a[x][y]-2]++;
+        return;
+    }
+    if(a[x][y]==0)return;
+    int val=max(max(max(max(check(a,x-1,y),check(a,x-1,y-1)),
+                max(check(a,x-1,y+1),check(a,x,y-1))),
+                max(max(check(a,x,y+1),check(a,x-1,y)),
+                max(check(a,x+1,y),check(a,x+1,y-1)))),check(a,x+1,y+1));
+    //cout<<x<<y<<val<<endl;;
+   if(val!=-1&&val!=1) hi[val-2]++;            
+                
+}
+void cal(int a[][1005]){
+    int inf[4]={0};
+    int hi[4]={0};
+    for(int i=0;i<n;i++)
+        for(int j=0;j<n;j++)
+            calUtil(a,i,j,inf,hi);
+    for(int i=0;i<4;i++)
+        cout<<inf[i]<<" ";
+    cout<<endl;
+    for(int i=0;i<4;i++)
+        cout<<hi[i]<<" ";
+    cout<<endl; 
+}
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    cin>>n;
+    int a[n][1005];
+    for(int i=0;i<n;i++)
+        for(int j=0;j<n;j++)
+            cin>>a[i][j];
+    cal(a);
+    return 0;
+}
+
