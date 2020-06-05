@@ -7,6 +7,10 @@ If Bob gives the correct answer, he gets a point. If not, Alice gets a point. Th
 
 Bob hasn't prepared so well. But he really wants to win the game. He wants you to tell him the correct answer
 
+Sieve of Eratosthenes
+Given a number n, print all primes smaller than or equal to n. It is also given that n is a small number.
+	
+prime = [True for i in range(n+1)] 
 Input
 4
 2 5 1
