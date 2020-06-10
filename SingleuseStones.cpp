@@ -1,5 +1,7 @@
 #GREEDY
 
+#TWO POINTER L,I-L
+
 A lot of frogs want to cross a river. A river is w units width, but frogs can only jump l units long, where l<w. Frogs can also jump on lengths shorter than l. but can't jump longer. Hopefully, there are some stones in the river to help them.
 
 The stones are located at integer distances from the banks. There are ai stones at the distance of i units from the bank the frogs are 
