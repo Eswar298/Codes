@@ -22,3 +22,37 @@ public int sol(Node node)
         int size2 = LISS(node.left)+LISS(node.right);
         return Math.max(size1,size2);
 }
+
+//USING DYNAMIC PROGRAMMING
+
+map<int,int> m;
+int cal(struct Node *root)
+{
+    if(root==NULL) return 0;
+     
+    if(m.find(root->data)!=m.end()){
+        return m[root->data];
+    }
+
+    int included=0,excluded = 0;
+    if(root->left!=NULL){
+        included += cal(root->left->left)+cal(root->left->right);
+    }
+    
+    if(root->right!=NULL){
+        included += cal(root->right->left)+cal(root->right->right);
+    }
+    
+    included++;
+    excluded += cal(root->left)+cal(root->right);
+    int ans = max(included,excluded);
+    m[root->data] = ans;
+    return ans;
+}
+
+int LISS(struct Node *root)
+{
+    m.clear();
+    int ans = cal(root);
+    return ans; 
+}
