@@ -112,3 +112,26 @@ include += getMaxSum(root->right->left)+getMaxSum(root->right->right);
 int exclude = getMaxSum(root->left)+getMaxSum(root->right);
 return max(include,exclude);
 }
+
+ if(node==null)
+        {
+            return 0;
+        }
+        
+        int size1 = 1;
+        if(node.left!=null)
+        {
+            size1 = size1+LISS(node.left.left)+LISS(node.left.right);
+        
+        }
+         if(node.right!=null)
+        {
+            size1 = size1+LISS(node.right.left)+LISS(node.right.right);
+            
+        }
+        int size2 = LISS(node.left)+LISS(node.right);
+        
+        
+        return Math.max(size1,size2);
+    }
+}
