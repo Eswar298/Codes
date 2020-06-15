@@ -1,3 +1,5 @@
+//SIMILAR TO LARGEST INDEPENDENT SUBSET PROBLEM
+
 Given a binary tree with a value associated with each node, we need to choose a subset of these nodes such that sum of
 chosen nodes is maximum under a constraint that no two chosen node in subset should be directly connected that is, 
 if we have taken a node in our sum then we can’t take its any children in consideration and vice versa.
@@ -113,25 +115,4 @@ int exclude = getMaxSum(root->left)+getMaxSum(root->right);
 return max(include,exclude);
 }
 
- if(node==null)
-        {
-            return 0;
-        }
-        
-        int size1 = 1;
-        if(node.left!=null)
-        {
-            size1 = size1+LISS(node.left.left)+LISS(node.left.right);
-        
-        }
-         if(node.right!=null)
-        {
-            size1 = size1+LISS(node.right.left)+LISS(node.right.right);
-            
-        }
-        int size2 = LISS(node.left)+LISS(node.right);
-        
-        
-        return Math.max(size1,size2);
-    }
-}
+ 
