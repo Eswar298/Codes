@@ -75,3 +75,34 @@ static void reverse(Integer a[])
     } 
     
     
+ int m = (int) (Math.sqrt(n));
+
+int max_a = Math.max(a,b);
+
+CEil and Receipt
+
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+			Scanner obj=new Scanner(System.in);
+			int t=obj.nextInt();
+			int arr[]= {2048,1024,512,256,128,64,32,16,8,4,2,1};
+			while(t>0) {
+	  int n=obj.nextInt() ;
+	  int c=0;
+      for(int i:arr) {
+    	  c+=n/i;
+    	  n=n%i;
+    	   }
+		  System.out.println(c);
+			t--;}
+	}
+}
