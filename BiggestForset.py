@@ -120,3 +120,58 @@ def calculateMax(forest,i,j,n):
         count+=calculateMax(forest,i,j+1,n)
         count+=calculateMax(forest,i,j-1,n)
     return count
+
+
+import java.util.ArrayList;
+import java.util.Scanner;
+ 
+class TestClass {
+    static int c=0;
+    public static void main(String args[] ) throws Exception {
+ 
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        scan.nextLine();
+        char [][] arr = new char[n][n];
+        for(int i=0;i<n;i++){
+            String s = scan.nextLine();
+            char[]a =s.toCharArray();
+            arr[i] = a;
+        }
+int sum=0;
+ArrayList<Integer> list = new ArrayList<>();
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(arr[i][j]=='T'){
+                    findtheforest(arr,i,j,n,list,0);
+                    if(c>sum){
+                        sum=c;
+                    }
+                }
+                c=0;
+            }
+        }
+ 
+       // System.out.println(list.size());
+        System.out.println(sum);
+    }
+ 
+    static void findtheforest(char [][] a, int i, int j, int n, ArrayList<Integer> list,int count){
+ 
+        if(i==n||j==n||j==-1||i==-1){
+            return ;
+        }
+ 
+ 
+        if(a[i][j]=='T'){
+            c++;
+            a[i][j]='W';
+             findtheforest(a,i,j+1,n,list,count);
+            findtheforest(a,i,j-1,n,list,count);
+            findtheforest(a,i-1,j,n,list,count);
+            findtheforest(a,i+1,j,n,list,count);
+        }
+ 
+ 
+    }
+}
