@@ -38,6 +38,8 @@ Test case -3 -> XOR (3) =3
 
 Test case -4 -> XOR (2,3) =1
 
+ Since xor of odd 1’s is 1 and xor of even
+1’s is 0.
 /* package codechef; // don't place package name! */
 
 import java.util.*;
