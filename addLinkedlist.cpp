@@ -52,3 +52,28 @@ void addCarryToRemaining(Node* head1, Node* curr, int* carry, Node** result)
     *(carry)=(car)/10;
     *result=head1;
 }
+
+
+void addCarryToRemaining(Node head, LinkedList res) {
+if (head != cur)
+{
+addCarryToRemaining(head.next, res);
+int sum = carry + head.data;
+carry = sum / 10;
+sum %= 10;
+
+res.push(sum);
+}
+}
+
+void addSameSize(Node head1, Node head2, LinkedList res) {
+
+if (head1 == null)
+return;
+addSameSize(head1.next, head2.next, res);
+int sum = head1.data + head2.data + carry;
+carry = sum / 10;
+sum = sum % 10;
+res.push(sum);
+}
+
