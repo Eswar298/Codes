@@ -76,3 +76,41 @@ class Codechef
 		
 	}
 }
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n,k;
+	    cin>>n>>k;
+	    vector<int> arr;
+	    for(int i=0;i<n;i++)
+	    {
+            int ele;
+	        cin>>ele;
+            arr.push_back(ele);
+	    }
+	    sort(arr.begin(),arr.end());
+	    int i,j;
+	    while(k--)
+	    {
+	        arr.erase(arr.begin()+n-1);
+            arr.erase(arr.begin()+0);
+            n=n-2;
+	    }
+	    double sum=0;
+	    double x=n;
+	    for(int i=0;i<n;i++)
+	    {
+	        sum+=arr[i];
+	    }
+	    double ans=sum/x;
+	    cout<<fixed<<setprecision(6)<<ans<<endl;
+	}
+	return 0;
+}
